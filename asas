@@ -1,0 +1,441 @@
+getgenv().Arceus = {
+    Silent = {
+        ["Enabled"] = (true), -- // Use The Silent Aim Or Not
+        
+        ["Part"] = ("HumanoidRootPart"), -- // What Part It Targerts
+        ["UseAirPart"] = (false), -- // When Target Isnt On The Ground It Uses This Part
+        ["AirPart"] = ("LowerTorso"), -- // The Parts It Targets On When Player Isnt On The Ground
+        ["ClosestPart"] = (true), -- // Automatically Gets The Closest Part Of The Target And Uses That
+        
+        ["HitChance"] = (100), -- // The Chance You Will Hit The Target
+        
+        ["Humanize"] = (true), -- // Makes Soo The Silent Doesnt Hit The Same Position
+        ["HumanizeValue"] = (10), -- // Makes How Much Power It Changes
+        
+        ["TriggerBot"] = (false), -- // Shoots AutoMatically
+        ["UseTriggerBotKeybind"] = (false), -- // Enable / Disable TriggerBot Keybind
+        ["TriggerBotKey"] = ("MouseButton3"), -- // KeyBind To Enable / Disable TriggerBot You Can Find More At https://create.roblox.com/docs/reference/engine/enums/UserInputType
+        
+        ["PredictMovement"] = (true), -- // Predicts Targets Movement
+        ["PredictionVelocity"] = (0.121), -- // How Much It Predicts
+        
+        ["AntiGroundShots"] = (true), -- // Makes So You Dont Shoot The Ground
+        ["AntiGroundValue"] = (0.5), -- // How Much Velocity It Rmoves From Target
+        ["WhenAntiGroundActivate"] = (-20), -- // When Its Gonna Activate
+        
+        ["AntiAimViewer"] = (true), -- // Bypasses The Mouse Position For The Server 
+        ["AntiAimViewerInterval"] = (5), -- // If You Cant Fire A Gun Make The Value Higher
+        
+        ["WallCheck"] = (true), -- // Checks If Theres A Wall
+        
+        ["CheckIf_KO"] = (true), -- // Checks If Target Is Grabbed Or Knocked
+        ["CheckIf_TargetDeath"] = (true), -- // Checks If Target Is Dead
+        
+        ["UseKeybind"] = (true), -- // Use The KeyBind To Enable / Disable The Silent Aim
+        ["Keybind"] = ("B") -- // The Keybind That Enables / Disables The Silent Aim
+    },
+    SilentAutoPrediction = {
+        ["Enable"] = (true), -- // Automatically Gets Good Prediction Of How Much Ping You Have
+        ["Over"] = (0.121), -- // Prediction When Your Ping Is Over 160
+        ["160"] = (0.121), -- // Prediction When Your Ping Is Over 160
+        ["150"] = (0.121), -- // Prediction When Your Ping Is Over 150
+        ["140"] = (0.121), -- // Prediction When Your Ping Is Over 140
+        ["130"] = (0.121), -- // Prediction When Your Ping Is Over 130
+        ["120"] = (0.121), -- // Prediction When Your Ping Is Over 120
+        ["110"] = (0.121), -- // Prediction When Your Ping Is Over 110
+        ["100"] = (0.121), -- // Prediction When Your Ping Is Over 100
+        ["90"] = (0.121), -- // Prediction When Your Ping Is Over 90
+        ["80"] = (0.121), -- // Prediction When Your Ping Is Over 80
+        ["70"] = (0.121), -- // Prediction When Your Ping Is Over 70
+        ["60"] = (0.121), -- // Prediction When Your Ping Is Over 60
+        ["50"] = (0.121), -- // Prediction When Your Ping Is Over 50
+        ["40"] = (0.121), -- // Prediction When Your Ping Is Over 40
+        ["30"] = (0.121), -- // Prediction When Your Ping Is Over 30
+        ["20"] = (0.121), -- // Prediction When Your Ping Is Over 20
+        ["10"] = (0.121) -- // Prediction When Your Ping Is Over 10
+    },
+    GunFOV = {
+        ["Enabled"] = (true), -- // Gun Fov / Fov Is Automatically Changed To Specific Gun Equipped
+    
+        ["Double-Barrel SG"] = {["Fov"] = 17}, -- // Db
+        ["Revolver"] = {["Fov"] = 10}, -- // Rev
+        ["SMG"] = {["Fov"] = 17}, -- // Smg
+        ["Shotgun"] = {["Fov"] = 17}, -- // Shotgun
+        ["Rifle"] = {["Fov"] = 17}, -- // Rifle
+        ["TacticalShotgun"] = {["Fov"] = 17}, -- // Tactical
+        ["Silencer"] = {["Fov"] = 17}, -- // Smg
+        ["AK47"] = {["Fov"] = 17}, -- // Ak47
+        ["AR"] = {["Fov"] = 17} -- // Rifle
+        -- // You Can Add Custom Weapons If You Want To :p
+    },
+    RangeFOV = {
+        ["Enabled"] = (false), -- // Gun Fov / Fov Is Automatically Changed To Specific Distance Between Target / This Will OverWrite GunFov
+        
+        ["Far_Activation"] = (math.huge), -- // Just Keep It At Math.Huge
+        ["Medium_Activation"] = (42), -- // Its Using Studs
+        ["Close_Activation"] = (16), -- // Its Uisng Studs
+        
+        ["Double-Barrel SG"] = {["Far"] = 7, ["Med"] = 9, ["Close"] = 15}, -- // Db
+        ["Revolver"] = {["Far"] = 8, ["Med"] = 12, ["Close"] = 29}, -- // Rev
+        ["SMG"] = {["Far"] = 3, ["Med"] = 5, ["Close"] = 7}, -- // Smg
+        ["Shotgun"] = {["Far"] = 5, ["Med"] = 7, ["Close"] = 10}, -- // Shotgun
+        ["Rifle"] = {["Far"] = 2, ["Med"] = 4, ["Close"] = 6}, -- // Rifle
+        -- // You Can Add Custom Weapons If You Want To :p
+    },
+    SilentFOV = {
+        ["Visible"] = (true), -- // If The Circle Is Showing Or Not
+        ["Filled"] = (false), -- // If The Circle Is Filled
+        ["Transparency"] = (1), -- // The Circle Transparency
+        ["Color"] = (Color3.fromRGB(0, 0, 0)), -- // Circle Transparency
+        ["Radius"] = (17) -- // How Big The Circle Is
+    },
+
+    AimAssist = {
+        ["Enabled"] = (true), -- // Use The Aim Assist Or Not
+        
+        ["Key"] = ("C"), -- // The Key To Lock Onto A Player
+        ["HoldMode"] = (false), -- // Enables While Only Holding The Key
+        
+        ["Part"] = ("HumanoidRootPart"), -- // The Part That Aim Assist Locks On
+        ["ClosestPart"] = (true), -- // Automatically Gets The Closest Part Of The Target And Uses That
+        
+        ["DisableTargetDeath"] = (true), -- // Disables When Target Dies
+        ["DisableLocalDeath"] = (true), -- // Disables When You Died
+        ["DisableOn_KO"] = (true), -- // Disables If Target Is KO Or Grabbed
+        
+        ["UseCircleRadius"] = (true), -- // Only Locks On To People Inside The Circle
+        ["DisableOutSideCircle"] = (false), -- // If Target Is OutSide The Circle It Disables The Aim Assist
+        
+        ["UseShake"] = (false), -- // Shakes The Camera
+        ["ShakeValue"] = (3), -- // How Much It Shakes
+        
+        ["PredictMovement"] = (true), -- // Predicts Targets MoveMent
+        ["PredictionVelocity"] = (0.121), -- // How Much It Predicts
+        
+        ["WallCheck"] = (true), -- // Checks If Theres A Wall
+        
+        ["Smoothness_X"] = (0.054), -- // How Smooth The Aim Assist Is On X
+        ["Smoothness_Y"] = (0.058) -- // How Smooth The Aim Assist Is On Y
+    },
+    AimAssistFOV = {
+        ["Visible"] = (false), -- // If The Circle Is Showing Or Not
+        ["Filled"] = (false), -- // If The Circle Is Filled
+        ["Transparency"] = (0.9), -- // Circle Transparency
+        ["Color"] = (Color3.fromRGB(0, 0, 0)), -- // Circle Transparency
+        ["Radius"] = (14) -- // How Big The Circle Is
+    },
+    Both = {
+        ["DetectDesync"] = (true), -- // Detects Velocity Changer + Actually Hits
+        ["DesyncDetection"] = (86), -- // When It Detects
+        
+        ["UsDetectDesyncKeybind"] = (false), -- // Enable / Disable Desync Detection Keybind
+        ["DetectDesyncKey"] = ("V"), -- // KeyBind To Enable / Disable Desync Detection
+        
+        ["DetectUnderGround"] = (true), -- // Detects Common UnderGround Resolver
+        ["UnderGroundDetection"] = (-30), -- // When It Detects
+        
+        ["UseUnderGroundKeybind"] = (false), -- // Enable / Disable UnderGround Resolver Keybind
+        ["UnderGroundKey"] = ("X"), -- // KeyBind To Enable / Disable UnderGround Resolver
+        
+        ["VisibleCheck"] = (true), -- // Checks If Target Is Visible
+        ["CrewCheck"] = (true), -- // Checks If Target Is In Your Crew
+        ["FriendCheck"] = (false), -- // Checks If Target Is Your Friend
+        ["TeamCheck"] = (false), -- // Checks If Player Is In the Same Team
+        
+        ["UseLay"] = (false), -- // Enable / Disable Lay Keybind
+        ["LayKeybind"] = ("T"), -- // KeyBind To Lay
+        
+        ["SendNotification"] = (true) -- // Sends Notification When you Enabled / Disabled Stuff
+    },
+    
+    Esp = {
+        ["Enabled"] = (false), -- // Enabel / Disable Esp
+        ["UseEspKeybind"] = (false), -- // Enable / Disable Esp Keybind
+        ["EspKey"] = ("Z"), -- // KeyBind To Enable / Disable Esp
+        ["HoldMode"] = (false), -- // Enables While Only Holding The Key
+        
+        ["Name"] = {["Enabled"] = true, ["OutLine"] = true, ["Color"] = Color3.fromRGB(255, 255, 255)}, -- // Shows Targets Name
+        ["Box"] = {["Enabled"] = true, ["OutLine"] = true, ["Color"] = Color3.fromRGB(255, 255, 255)}, -- // Shows Box On Target
+        ["HealthBar"] = {["Enabled"] = true, ["OutLine"] = true, ["Color"] = Color3.fromRGB(0, 255, 0)}, -- // Shows An Health Bar On Target
+        ["HealthText"] = {["Enabled"] = true, ["OutLine"] = true, ["Color"] = Color3.fromRGB(0, 255, 0)}, -- // Shows An Text How Much Hp Target Have
+        ["Distance"] = {["Enabled"] = true, ["OutLine"] = true, ["Color"] = Color3.fromRGB(255, 255, 255)} -- // Shows Targets Distance Between You
+    }
+}
+
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+local Enabled = false
+Mouse.KeyDown:Connect(
+    function(Key)
+        if Key == "q" then --input key
+            Enabled = not Enabled
+            if Enabled == true then
+                repeat
+                    game:GetService("RunService").Heartbeat:wait()
+                    game:GetService("VirtualInputManager"):SendMouseWheelEvent("0.1", "0.1", true, game) -- change these numbers for higher delay
+                    game:GetService("RunService").Heartbeat:wait()
+                    game:GetService("VirtualInputManager"):SendMouseWheelEvent("0.1", "0.1", false, game)
+                    game:GetService("RunService").Heartbeat:wait()
+                until Enabled == false
+            end
+        end
+    end
+)
+
+for _, v in next, game:GetService("CoreGui"):GetChildren() do
+    if (v.Name:match("Animation")) then
+        v:Destroy()
+    end
+end
+
+local Folder = Instance.new('Folder', game:GetService("Workspace"))
+Folder.Name = ("Animation")
+
+local LeanAnimation = Instance.new("Animation", Folder)
+LeanAnimation.Name = "LeanAnimation"
+LeanAnimation.AnimationId = "rbxassetid://3152375249"
+
+local LayAnimation = Instance.new("Animation", Folder)
+LayAnimation.Name = "LayAnimation"
+LayAnimation.AnimationId = "rbxassetid://3152378852"
+
+local Dance1Animation = Instance.new("Animation", Folder)
+Dance1Animation.Name = "Dance1Animation"
+Dance1Animation.AnimationId = "rbxassetid://3189773368"
+
+local Dance2Animation = Instance.new("Animation", Folder)
+Dance2Animation.Name = "Dance2Animation"
+Dance2Animation.AnimationId = "rbxassetid://3189776546"
+
+local GreetAnimation = Instance.new("Animation", Folder)
+GreetAnimation.Name = "GreetAnimation"
+GreetAnimation.AnimationId = "rbxassetid://3189777795"
+
+local ChestPumpAnimation = Instance.new("Animation", Folder)
+ChestPumpAnimation.Name = "ChestPumpAnimation"
+ChestPumpAnimation.AnimationId = "rbxassetid://3189779152"
+
+local PrayingAnimation = Instance.new("Animation", Folder)
+PrayingAnimation.Name = "PrayingAnimation"
+PrayingAnimation.AnimationId = "rbxassetid://3487719500"
+
+if game.PlaceId == 2788229376 then
+    function AnimationPack(Character)
+        Character:WaitForChild'HumanoidRootPart'
+        local Animation = Instance.new("ScreenGui")
+        local AnimationPack = Instance.new("TextButton")
+        local CloseButton = Instance.new("TextButton")
+        local ScrollingFrame = Instance.new("ScrollingFrame")
+        local ChestPumpButton = Instance.new("TextButton")
+        local Dance1Button = Instance.new("TextButton")
+        local Dance2Button = Instance.new("TextButton")
+        local LayButton = Instance.new("TextButton")
+        local GreetButton = Instance.new("TextButton")
+        local LeanButton = Instance.new("TextButton")
+        local PrayingButton = Instance.new("TextButton")
+
+        Animation.Name = "Animation"
+        Animation.Parent = game.CoreGui
+        Animation.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+        AnimationPack.Name = "AnimationPack"
+        AnimationPack.Parent = Animation
+        AnimationPack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        AnimationPack.BorderSizePixel = 0
+        AnimationPack.Position = UDim2.new(0, 0, 0.5, 0)
+        AnimationPack.Size = UDim2.new(0, 100, 0, 20)
+        AnimationPack.Visible = false
+        AnimationPack.Font = Enum.Font.SourceSansBold
+        AnimationPack.Text = "Animations"
+        AnimationPack.TextColor3 = Color3.fromRGB(0, 0, 0)
+        AnimationPack.TextSize = 18.000
+
+        CloseButton.Name = "CloseButton"
+        CloseButton.Parent = AnimationPack
+        CloseButton.BackgroundColor3 = Color3.fromRGB(255, 112, 112)
+        CloseButton.Position = UDim2.new(0, 0, 0, 97)
+        CloseButton.Size = UDim2.new(0, 120, 0, 25)
+        CloseButton.Visible = false
+        CloseButton.Font = Enum.Font.SourceSansBold
+        CloseButton.Text = "CLOSE"
+        CloseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        CloseButton.TextSize = 30.000
+
+        ScrollingFrame.Parent = AnimationPack
+        ScrollingFrame.Active = true
+        ScrollingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+        ScrollingFrame.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+        ScrollingFrame.Position = UDim2.new(0, 60, 0, 0)
+        ScrollingFrame.Size = UDim2.new(0, 120, 0, 195)
+        ScrollingFrame.Visible = false
+        ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1, 200)
+
+        ChestPumpButton.Name = "ChestPumpButton"
+        ChestPumpButton.Parent = ScrollingFrame
+        ChestPumpButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ChestPumpButton.Position = UDim2.new(0, 0, 0.727272749, 0)
+        ChestPumpButton.Size = UDim2.new(1, 0, 0, 30)
+        ChestPumpButton.Font = Enum.Font.GothamBlack
+        ChestPumpButton.Text = "Chest Pump"
+        ChestPumpButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        ChestPumpButton.TextSize = 12.000
+        ChestPumpButton.TextWrapped = true
+
+        Dance1Button.Name = "Dance1Button"
+        Dance1Button.Parent = ScrollingFrame
+        Dance1Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Dance1Button.Position = UDim2.new(0, 0, 0.290909111, 0)
+        Dance1Button.Size = UDim2.new(1, 0, 0, 30)
+        Dance1Button.Font = Enum.Font.GothamBlack
+        Dance1Button.Text = "Dance1"
+        Dance1Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Dance1Button.TextSize = 12.000
+        Dance1Button.TextWrapped = true
+
+        Dance2Button.Name = "Dance2Button"
+        Dance2Button.Parent = ScrollingFrame
+        Dance2Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Dance2Button.Position = UDim2.new(0, 0, 0.436363667, 0)
+        Dance2Button.Size = UDim2.new(1, 0, 0, 30)
+        Dance2Button.Font = Enum.Font.GothamBlack
+        Dance2Button.Text = "Dance2"
+        Dance2Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Dance2Button.TextSize = 12.000
+        Dance2Button.TextWrapped = true
+
+        LayButton.Name = "LayButton"
+        LayButton.Parent = ScrollingFrame
+        LayButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        LayButton.Position = UDim2.new(0, 0, 0.145454556, 0)
+        LayButton.Size = UDim2.new(1, 0, 0, 30)
+        LayButton.Font = Enum.Font.GothamBlack
+        LayButton.Text = "Lay"
+        LayButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        LayButton.TextSize = 12.000
+        LayButton.TextWrapped = true
+
+        GreetButton.Name = "GreetButton"
+        GreetButton.Parent = ScrollingFrame
+        GreetButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        GreetButton.Position = UDim2.new(0, 0, 0.581818223, 0)
+        GreetButton.Size = UDim2.new(1, 0, 0, 30)
+        GreetButton.Font = Enum.Font.GothamBlack
+        GreetButton.Text = "Greet"
+        GreetButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        GreetButton.TextSize = 12.000
+        GreetButton.TextWrapped = true
+
+        LeanButton.Name = "LeanButton"
+        LeanButton.Parent = ScrollingFrame
+        LeanButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        LeanButton.Size = UDim2.new(1, 0, 0, 30)
+        LeanButton.Font = Enum.Font.GothamBlack
+        LeanButton.Text = "Lean"
+        LeanButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        LeanButton.TextSize = 12.000
+        LeanButton.TextWrapped = true
+
+        PrayingButton.Name = "PrayingButton"
+        PrayingButton.Parent = ScrollingFrame
+        PrayingButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        PrayingButton.Position = UDim2.new(5.96046448e-08, 0, 0.872727275, 0)
+        PrayingButton.Size = UDim2.new(1, 0, 0, 30)
+        PrayingButton.Font = Enum.Font.GothamBlack
+        PrayingButton.Text = "Praying"
+        PrayingButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        PrayingButton.TextSize = 12.000
+        PrayingButton.TextWrapped = true
+
+        wait(1)
+
+        local AnimationPack = game:GetService("CoreGui").Animation.AnimationPack
+        local ScrollingFrame = AnimationPack.ScrollingFrame
+        local CloseButton = AnimationPack.CloseButton
+
+        AnimationPack.Visible = true
+
+        local Lean = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LeanAnimation)
+
+        local Lay = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LayAnimation)
+
+        local Dance1 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance1Animation)
+
+        local Dance2 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance2Animation)
+
+        local Greet = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(GreetAnimation)
+
+        local ChestPump = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(ChestPumpAnimation)
+
+        local Praying = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(PrayingAnimation)
+
+        function Stop()
+            Lay:Stop()
+            Lean:Stop()
+            Dance1:Stop()
+            Dance2:Stop()
+            Greet:Stop()
+            ChestPump:Stop()
+            Praying:Stop()
+        end
+
+        local LeanTextButton = ScrollingFrame.LeanButton
+        local LayTextButton = ScrollingFrame.LayButton
+        local Dance1TextButton = ScrollingFrame.Dance1Button
+        local Dance2TextButton = ScrollingFrame.Dance2Button
+        local GreetTextButton = ScrollingFrame.GreetButton
+        local ChestPumpTextButton = ScrollingFrame.ChestPumpButton
+        local PrayingTextButton = ScrollingFrame.PrayingButton
+
+        AnimationPack.MouseButton1Click:Connect(function()
+            if ScrollingFrame.Visible == false then
+                ScrollingFrame.Visible = true
+                CloseButton.Visible = true
+            end
+        end)
+        CloseButton.MouseButton1Click:Connect(function()
+            if ScrollingFrame.Visible == true then
+                ScrollingFrame.Visible = false
+                CloseButton.Visible = false
+            end
+        end)
+        LeanTextButton.MouseButton1Click:Connect(function()
+            Stop()
+            Lean:Play()
+        end)
+        LayTextButton.MouseButton1Click:Connect(function()
+            Stop()
+            Lay:Play()
+        end)
+        Dance1TextButton.MouseButton1Click:Connect(function()
+            Stop()
+            Dance1:Play()
+        end)
+        Dance2TextButton.MouseButton1Click:Connect(function()
+            Stop()
+            Dance2:Play()
+        end)
+        GreetTextButton.MouseButton1Click:Connect(function()
+            Stop()
+            Greet:Play()
+        end)
+        ChestPumpTextButton.MouseButton1Click:Connect(function()
+            Stop()
+            ChestPump:Play()
+        end)
+        PrayingTextButton.MouseButton1Click:Connect(function()
+            Stop()
+            Praying:Play()
+        end)
+
+        game:GetService("Players").LocalPlayer.Character.Humanoid.Running:Connect(function()
+            Stop()
+        end)
+        game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+            game.CoreGui.Animation:Destroy()
+        end)
+    end
+    AnimationPack(game.Players.LocalPlayer.Character)
+    game.Players.LocalPlayer.CharacterAdded:Connect(AnimationPack)
+end
+
+loadstring(game:HttpGet("https://gist.githubusercontent.com/Adel342/3a23d056c9622ca90a3d398fef7df2dd/raw/d0b03965dd39d4c0218df0e382174ffa1437740b/arceus"))()
